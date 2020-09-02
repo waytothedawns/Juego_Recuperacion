@@ -5,6 +5,7 @@ using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
 using Platformer.Core;
+using System;
 
 namespace Platformer.Mechanics
 {
@@ -71,7 +72,18 @@ namespace Platformer.Mechanics
             UpdateJumpState();
             base.Update();
         }
-
+        public void GodMode(float jumpGodMode)
+        {
+            velocity.y = 0;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                velocity.y += jumpGodMode;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                velocity.y -= jumpGodMode;
+            }
+        }
         void UpdateJumpState()
         {
             jump = false;

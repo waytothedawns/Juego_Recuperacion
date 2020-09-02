@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Platformer.Gameplay;
 using UnityEngine;
 using static Platformer.Core.Simulation;
+using UnityEngine.SceneManagement;
 
 namespace Platformer.Mechanics
 {
@@ -19,6 +20,7 @@ namespace Platformer.Mechanics
             {
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;
+                SceneManager.LoadScene(7);
             }
         }
     }
