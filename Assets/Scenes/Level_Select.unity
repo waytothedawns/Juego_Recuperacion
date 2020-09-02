@@ -378,7 +378,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1554382054}
-        m_MethodName: BotonOPTIONS
+        m_MethodName: BotonMENU
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1872,7 +1872,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1554382054}
-        m_MethodName: BotonOPTIONS
+        m_MethodName: BotonPLAY
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
