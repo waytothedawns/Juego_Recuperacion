@@ -7,17 +7,17 @@ public class MenuManager : MonoBehaviour
 {
     public void BotonPLAY()          // Carga el Gameplay
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void BotonOPTIONS()       // Abre las Opciones
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 
     public void BotonMENU()         // Carga el Menu
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void BotonEXIT()          // Cierra la ventana
