@@ -1,6 +1,7 @@
 using Platformer.Gameplay;
 using UnityEngine;
 using static Platformer.Core.Simulation;
+using UnityEngine.SceneManagement;
 
 namespace Platformer.Mechanics
 {
@@ -9,13 +10,23 @@ namespace Platformer.Mechanics
     /// </summary>
     public class VictoryZone : MonoBehaviour
     {
+        [SerializeField] int coinsToWin;
         void OnTriggerEnter2D(Collider2D collider)
         {
             var p = collider.gameObject.GetComponent<PlayerController>();
-            if (p != null)
+            CoinCounter coinCounter;
+            coinCounter = p.GetComponent<CoinCounter>();
+            
+            
+            if (p != null && coinCounter.CoinsNumber() >= coinsToWin)
             {
+                //Cuando ganas
+                SceneManager.LoadScene(6);
                 var ev = Schedule<PlayerEnteredVictoryZone>();
                 ev.victoryZone = this;
+            }else if(p != null && coinCounter.CoinsNumber() < coinsToWin)
+            {
+                //Aquí se ejecuta el codigo cuando el player esta en la zona de la victoria pero no tiene las monedas suficientes
             }
         }
     }
