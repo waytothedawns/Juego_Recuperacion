@@ -11,6 +11,7 @@ namespace Platformer.Mechanics
     public class VictoryZone : MonoBehaviour
     {
         [SerializeField] int coinsToWin;
+        [SerializeField] ParticleSystem ps;
         void OnTriggerEnter2D(Collider2D collider)
         {
             var p = collider.gameObject.GetComponent<PlayerController>();
@@ -24,6 +25,7 @@ namespace Platformer.Mechanics
                 SceneManager.LoadScene(6);
                 var ev = Schedule<PlayerEnteredVictoryZone>();
                 ev.victoryZone = this;
+                ps.Play();
             }else if(p != null && coinCounter.CoinsNumber() < coinsToWin)
             {
                 //Aquí se ejecuta el codigo cuando el player esta en la zona de la victoria pero no tiene las monedas suficientes
