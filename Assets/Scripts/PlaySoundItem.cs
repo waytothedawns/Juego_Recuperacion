@@ -18,14 +18,13 @@ public class PlaySoundItem : MonoBehaviour
     internal Sprite[] sprites = new Sprite[0];
     internal bool collected = false;
     internal TokenController controller;
+        Animator anim;
     private void Awake()
     {
         audioBass = GetComponent<AudioSource>();
-      
+        anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (randomAnimationStartTime)
-        frame = Random.Range(0, sprites.Length);
-        sprites = idleAnimation;
+            
 
         gameObject.tag = "Instrument";
     }
@@ -34,20 +33,21 @@ public class PlaySoundItem : MonoBehaviour
         audioBass.volume = 0;
     }
        
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            audioBass.DOFade(1, timeFadeAudio);
-            if (collected) return;
-            //disable the gameObject and remove it from the controller update list.
-            frame = 0;
-            sprites = collectedAnimation;
-            if (controller != null)
-                collected = true;
+        audioBass.DOFade(1, timeFadeAudio);
+        if (collected) return;
+        //disable the gameObject and remove it from the controller update list.
+        frame = 0;
+        sprites = collectedAnimation;
+        if (controller != null)
+            collected = true;
 
-                spriteRenderer.enabled = false;
+            //spriteRenderer.enabled = false;
+            anim.SetTrigger("collect");
+            }
         }
     }
 }
-    }

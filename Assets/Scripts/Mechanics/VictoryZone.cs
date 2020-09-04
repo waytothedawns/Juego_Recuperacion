@@ -12,24 +12,47 @@ namespace Platformer.Mechanics
     {
         [SerializeField] int coinsToWin;
         [SerializeField] ParticleSystem ps;
+        [SerializeField] GameObject canvasVictory;
+        CoinCounter coinCounter;
+        private void Start()
+        {
+            canvasVictory.SetActive(false);
+        }
         void OnTriggerEnter2D(Collider2D collider)
         {
             var p = collider.gameObject.GetComponent<PlayerController>();
-            CoinCounter coinCounter;
             coinCounter = p.GetComponent<CoinCounter>();
             
             
             if (p != null && coinCounter.CoinsNumber() >= coinsToWin)
             {
                 //Cuando ganas
-                SceneManager.LoadScene(6);
                 var ev = Schedule<PlayerEnteredVictoryZone>();
                 ev.victoryZone = this;
+                Invoke("LoadNextScene", 2);
                 ps.Play();
-            }else if(p != null && coinCounter.CoinsNumber() < coinsToWin)
+            }
+            else if(p != null && coinCounter.CoinsNumber() < coinsToWin)
             {
-                
-                //Aquí se ejecuta el codigo cuando el player esta en la zona de la victoria pero no tiene las monedas suficientes
+
+                canvasVictory.SetActive(true);
+            }
+        }
+
+        private void LoadNextScene()
+        {
+            SceneManager.LoadScene(6);
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                if(coinCounter.CoinsNumber() < coinsToWin)
+                {
+                    //Desactivar canvas advertencia
+                    canvasVictory.SetActive(false);
+                }
             }
         }
     }

@@ -39,7 +39,14 @@ public class PauseManager : MonoBehaviour
     {
         isPaused = !isPaused;
         canvasPause.SetActive(isPaused);
-        Time.timeScale = 0;
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     void Options()
