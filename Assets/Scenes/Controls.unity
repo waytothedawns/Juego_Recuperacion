@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -372,6 +372,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 0}
 --- !u!4 &405311769
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 0}
 --- !u!4 &1645126700
 Transform:
   m_ObjectHideFlags: 0
@@ -1866,8 +1876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 529.3, y: 440}
-  m_SizeDelta: {x: 705, y: 65}
+  m_AnchoredPosition: {x: 466.9, y: 440}
+  m_SizeDelta: {x: 579, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132210963
 MonoBehaviour:
@@ -1888,7 +1898,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: beace32d24914284180f60e365fa2335, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cdb62849403d104b828951f9b1e161e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
