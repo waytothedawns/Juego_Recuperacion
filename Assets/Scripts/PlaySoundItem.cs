@@ -45,8 +45,8 @@ public class PlaySoundItem : MonoBehaviour
         if (controller != null)
             collected = true;
 
-            //spriteRenderer.enabled = false;
-            anim.SetTrigger("collect");
+         spriteRenderer.enabled = false;
+
             }
         }
     }
