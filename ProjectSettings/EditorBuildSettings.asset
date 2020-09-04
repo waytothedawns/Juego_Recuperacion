@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Logo.unity
     guid: 9eb8f292cee34f54dabc3a864a40fbe3
+  - enabled: 1
+    path: Assets/Scenes/Game 2.unity
+    guid: fd1995b418cccd847a9161a70fb4e41a
   m_configObjects: {}

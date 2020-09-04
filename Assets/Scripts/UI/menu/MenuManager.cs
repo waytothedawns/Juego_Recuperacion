@@ -9,6 +9,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void BotonPLAY2()          // Carga el Gameplay
+    {
+        SceneManager.LoadScene(9);
+    }
 
     public void BotonOPTIONS()       // Abre las Opciones
     {
