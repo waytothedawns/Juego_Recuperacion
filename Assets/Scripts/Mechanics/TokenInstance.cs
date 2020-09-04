@@ -37,7 +37,7 @@ namespace Platformer.Mechanics
                 frame = Random.Range(0, sprites.Length);
             sprites = idleAnimation;
 
-            gameObject.tag = "Coin";//hacer esto es una guarrada pero no hay prefabs de las monedas :(
+            gameObject.tag = "Coin";
         }
 
         void OnTriggerEnter2D(Collider2D other)

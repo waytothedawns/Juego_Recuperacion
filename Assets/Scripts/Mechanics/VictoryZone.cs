@@ -28,6 +28,7 @@ namespace Platformer.Mechanics
                 ps.Play();
             }else if(p != null && coinCounter.CoinsNumber() < coinsToWin)
             {
+                
                 //Aquí se ejecuta el codigo cuando el player esta en la zona de la victoria pero no tiene las monedas suficientes
             }
         }
