@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class SettingsResolution : MonoBehaviour
 {
@@ -36,9 +37,10 @@ public class SettingsResolution : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
 
     }
-    public void SetQuality (int qualityIndex)
-       
+    public void SetResolution (int resolutionIndex)
     {
-        QualitySettings.SetQualityLevel(qualityIndex);
+        Resolution resolution = resolutions[resolutionIndex];
+
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 }
