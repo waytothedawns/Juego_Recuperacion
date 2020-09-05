@@ -7,21 +7,35 @@ using UnityEngine.SceneManagement;
 
 namespace Platformer.Mechanics
 {
-    /// <summary>
-    /// DeathZone components mark a collider which will schedule a
-    /// PlayerEnteredDeathZone event when the player enters the trigger.
-    /// </summary>
     public class DeathZone : MonoBehaviour
     {
+        public enum Nivel { Nivel_1, Nivel_2 };
+        public Nivel nivel;
         void OnTriggerEnter2D(Collider2D collider)
         {
+
             var p = collider.gameObject.GetComponent<PlayerController>();
-            if (p != null)
+            switch (nivel)
             {
-                var ev = Schedule<PlayerEnteredDeathZone>();
-                ev.deathzone = this;
-                SceneManager.LoadScene(8);
+                case Nivel.Nivel_1:
+                    if (p != null)
+                    {
+                        var ev = Schedule<PlayerEnteredDeathZone>();
+                        ev.deathzone = this;
+                        SceneManager.LoadScene(8);
+                    }
+                    break;
+                case Nivel.Nivel_2:
+                    if (p != null)
+                    {
+                        var ev = Schedule<PlayerEnteredDeathZone>();
+                        ev.deathzone = this;
+                        SceneManager.LoadScene(10);
+                    }
+                    break;
+               
             }
+           
         }
     }
 }
