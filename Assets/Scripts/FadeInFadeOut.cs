@@ -21,6 +21,7 @@ public class FadeInFadeOut : MonoBehaviour
     public void FadeIn()
     {
         canvasGroup.DOFade(1, timeFade).OnComplete(() => FadeOut());
+        audio.Play();
     }
     public void FadeOut()
     {
