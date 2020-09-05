@@ -20,7 +20,7 @@ namespace Platformer.Mechanics
             {
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(8);
             }
         }
     }

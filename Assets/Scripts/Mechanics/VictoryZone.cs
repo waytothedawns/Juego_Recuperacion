@@ -41,7 +41,7 @@ namespace Platformer.Mechanics
 
         private void LoadNextScene()
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(7);
         }
 
         private void OnTriggerExit2D(Collider2D collision)

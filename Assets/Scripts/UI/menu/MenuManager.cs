@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void BotonPLAY()          // Carga el Gameplay
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
     public void BotonPLAY2()          // Carga el Gameplay
     {
@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
 
     public void BotonOPTIONS()       // Abre las Opciones
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 
     public void BotonMENU()         // Carga el Menu
@@ -26,16 +26,16 @@ public class MenuManager : MonoBehaviour
 
     public void BotonCREDITOS()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     public void BotonCONTROLES()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void BotonLEVELSELECT()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
     public void BotonEXIT()          // Cierra la ventana
